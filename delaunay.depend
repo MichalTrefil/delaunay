@@ -1,0 +1,34 @@
+# depslib dependency file v1.0
+1491909752 source:c:\users\administrator\desktop\cpp\delaunay\main.c
+	<stdio.h>
+	<stdlib.h>
+	"delaunay.h"
+	<math.h>
+
+1480816337 source:c:\users\administrator\desktop\cpp\delaunay\delaunay.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	<assert.h>
+	"delaunay.h"
+
+1480823072 c:\users\administrator\desktop\cpp\delaunay\delaunay.h
+
+1480787538 source:c:\users\m\desktop\delaunay\delaunay.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	<assert.h>
+	"delaunay.h"
+
+1480794274 c:\users\m\desktop\delaunay\delaunay.h
+
+1507367870 source:c:\users\m\desktop\delaunay\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<time.h>
+	"delaunay.h"
+

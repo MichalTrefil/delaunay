@@ -1,0 +1,23 @@
+Pocet pointu: 9 nasobek: 10.000000 offset: 10.000000
+Pocet trianglu: 11
+Cas programu : 0.0000 sec
+
+*************************************************************
+Pocet pointu: 9 nasobek: 10.000000 offset: 10.000000
+Pocet trianglu: 11
+Cas programu : 5.6946 msec
+
+*************************************************************
+Pocet pointu: 9 nasobek: 10.000000 offset: 10.000000
+Pocet trianglu: 11
+Cas programu : 5.6946 msec
+
+*************************************************************
+Pocet pointu: 9 nasobek: 10.000000 offset: 10.000000
+Pocet trianglu: 11
+Cas programu : 5.6946 msec
+
+*************************************************************
+Pocet pointu: 9 nasobek: 10.000000 offset: 10.000000
+Pocet trianglu: 11
+Cas programu : 5.6946 msec

@@ -1,0 +1,5 @@
+
+*************************************************************
+Pocet pointu: 18 nasobek: 10.000000 offset: 10.000000
+Pocet trianglu: 28
+Cas programu : 1.6934 msec
