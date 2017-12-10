@@ -28,17 +28,17 @@ int main()
     del_point2d_t b[1000];
     /// /////////////////////////////////////////////////////////////////
     log = fopen ("log_delaunay.txt", "a");
-    fprintf(log,"\n**************************************************************\n");
+    fprintf(log,"\n************************************************\n");
     time_t current_time;
     char* c_time_string;
     current_time = time(NULL);
     c_time_string = ctime(&current_time);
-    fprintf(log,"cas logu: %s", c_time_string);
+    fprintf(log,"Cas logu: %s", c_time_string);
 
     fp = fopen ("points_for_delaunay.txt", "r");
     fgets(buf, sizeof buf, fp);
     sscanf(buf, "%d %lf %lf", &pocet_pointu_v_souboru,&nasobek,&offset);
-    fprintf(log,"Pocet pointu: %d nasobek: %f offset: %f\n",pocet_pointu_v_souboru,nasobek,offset);
+    fprintf(log,"Pocet pointu: %d \nnasobek: %.1f offset: %.1f\n",pocet_pointu_v_souboru,nasobek,offset);
     /////////////////////////////////////////////////////////////////////////////
     i = 0;
     while (fgets(buf, sizeof buf, fp) != NULL)
@@ -130,7 +130,7 @@ int main()
         j = j + 3;
     }
     fclose(fp2);
-    fprintf(log,"Cas programu : %.4f msec\n",(float)(clock() - start));
+    fprintf(log,"Cas programu : %.1f msec\n",(float)(clock() - start));
     fclose(log);
 
     return 0;

@@ -54,3 +54,60 @@ cas logu: Sun Dec 10 18:14:46 2017
 Pocet pointu: 18 nasobek: 10.000000 offset: 10.000000
 Pocet trianglu: 28
 Cas programu : 5.0000 msec
+
+**************************************************************
+Cas logu: Sun Dec 10 18:16:59 2017
+Pocet pointu: 18 nasobek: 10.000000 offset: 10.000000
+Pocet trianglu: 28
+Cas programu : 7.0000 msec
+
+**************************************************************
+Cas logu: Sun Dec 10 18:18:03 2017
+Pocet pointu: 18 nasobek: 10.000000,2 offset: 10.000000
+Pocet trianglu: 28
+Cas programu : 7.0000 msec
+
+**************************************************************
+Cas logu: Sun Dec 10 18:18:30 2017
+Pocet pointu: 18 nasobek: 10.000000.2 offset: 10.000000
+Pocet trianglu: 28
+Cas programu : 6.0000 msec
+
+**************************************************************
+Cas logu: Sun Dec 10 18:22:27 2017
+Pocet pointu: 18 nasobek: 10.0 offset: 10.0
+Pocet trianglu: 28
+Cas programu : 5.0000 msec
+
+**************************************************************
+Cas logu: Sun Dec 10 18:24:39 2017
+Pocet pointu: 18 nasobek: 10.0 offset: 10.0
+Pocet trianglu: 28
+Cas programu : 4.0 msec
+
+**************************************************************
+Cas logu: Sun Dec 10 18:25:47 2017
+
+Pocet pointu: 18 nasobek: 10.0 offset: 10.0
+Pocet trianglu: 28
+Cas programu : 5.0 msec
+
+**************************************************************
+Cas logu: Sun Dec 10 18:26:54 2017
+Pocet pointu: 18 nasobek: 10.0 offset: 10.0
+Pocet trianglu: 28
+Cas programu : 6.0 msec
+
+**************************************************************
+Cas logu: Sun Dec 10 18:27:47 2017
+Pocet pointu: 18 
+nasobek: 10.0 offset: 10.0
+Pocet trianglu: 28
+Cas programu : 3.0 msec
+
+**************************************************************
+Cas logu: Sun Dec 10 18:28:22 2017
+Pocet pointu: 18 
+nasobek: 10.0 offset: 10.0
+Pocet trianglu: 28
+Cas programu : 6.0 msec
