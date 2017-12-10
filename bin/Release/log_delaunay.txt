@@ -3,3 +3,54 @@
 Pocet pointu: 18 nasobek: 10.000000 offset: 10.000000
 Pocet trianglu: 28
 Cas programu : 1.6934 msec
+
+**************************************************************
+Pocet pointu: 18 nasobek: 10.000000 offset: 10.000000
+Pocet trianglu: 28
+Cas programu : 1.6934 msec
+
+**************************************************************
+Pocet pointu: 18 nasobek: 10.000000 offset: 10.000000
+Pocet trianglu: 28
+Cas programu : 1.6934 msec
+
+**************************************************************
+Pocet pointu: 18 nasobek: 10.000000 offset: 10.000000
+Pocet trianglu: 28
+Cas programu : 1.6934 msec
+
+**************************************************************
+Pocet pointu: 18 nasobek: 10.000000 offset: 10.000000
+Pocet trianglu: 28
+Cas programu : 1.6934 msec
+
+**************************************************************
+Pocet pointu: 18 nasobek: 10.000000 offset: 10.000000
+Pocet trianglu: 28
+
+**************************************************************
+Pocet pointu: 18 nasobek: 10.000000 offset: 10.000000
+Pocet trianglu: 28
+Cas programu : 2.0000 msec
+
+**************************************************************
+Pocet pointu: 18 nasobek: 10.000000 offset: 10.000000
+Pocet trianglu: 28
+Cas programu : 3.0000 msec
+
+**************************************************************
+Pocet pointu: 18 nasobek: 10.000000 offset: 10.000000
+Pocet trianglu: 28
+Cas programu : 2.0000 msec
+
+**************************************************************
+Current time is Sun Dec 10 18:13:16 2017
+Pocet pointu: 18 nasobek: 10.000000 offset: 10.000000
+Pocet trianglu: 28
+Cas programu : 8.0000 msec
+
+**************************************************************
+cas logu: Sun Dec 10 18:14:46 2017
+Pocet pointu: 18 nasobek: 10.000000 offset: 10.000000
+Pocet trianglu: 28
+Cas programu : 5.0000 msec
