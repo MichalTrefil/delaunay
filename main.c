@@ -12,45 +12,47 @@ void swapp (double *px, double *py)
     *py = *tmp;
 }
 
+FILE * f_vstup;
+FILE * f_vystup;
+FILE * f_log;
 
 int main()
 {
     clock_t start = clock();
-    FILE * fp;
-    FILE * fp2;
-    FILE * log;
-    log = fopen ("log_delaunay.txt", "a");
-    fprintf(log,"\n**************************************************************\n");
-    int i ;
+
+    f_log = fopen ("log_delaunay.txt", "a");
+    fprintf(f_log,"\n**************************************************************\n");
     double nasobek, offset,h,h_ideal;
-    int j = 0;
+    int i,j = 0;
     int pocet_pointu_v_souboru;
-    //char file_out[100];
     char buf [50];
-    delaunay2d_t* d;
-    tri_delaunay2d_t* t;
+
+    delaunay2d_t* d;       /// z delaunay.h
+    tri_delaunay2d_t* t;   /// z delaunay.h
+
     del_point2d_t b[1000];
 
+    f_vstup = fopen ("points_for_delaunay.txt", "r");
 
-    //fp = fopen ("C:/NMS/macros/points_for_delaunay.txt", "r");
-    fp = fopen ("points_for_delaunay.txt", "r");
-
-    // prvni radek
-    fgets(buf, sizeof buf, fp);
+    /// prvni radek              9 10 10     pocet,nasobek,offset
+    fgets(buf, sizeof buf, f_vstup);
     sscanf(buf, "%d %lf %lf", &pocet_pointu_v_souboru,&nasobek,&offset);
-    fprintf(log,"Pocet pointu: %d nasobek: %f offset: %f\n",pocet_pointu_v_souboru,nasobek,offset);
-    /////////////////////////////////////////////////////////////////////////////
+    fprintf(f_log,"Pocet pointu: %d nasobek: %f offset: %f\n",pocet_pointu_v_souboru,nasobek,offset);
+    /// ///////////////// ze souboru do pole bodu  b[] ////////////////
     i = 0;
-    while (fgets(buf, sizeof buf, fp) != NULL)
+    while (fgets(buf, sizeof buf, f_vstup) != NULL)
     {
-        sscanf(buf, "%lf:%lf:%lf", &b[i].x,&b[i].y,&b[i].z);
+        sscanf(buf, "%lf:%lf:%lf", &b[i].x,  &b[i].y,  &b[i].z);
         i++;
     }
-    fclose(fp);
+    fclose(f_vstup);
 
 
     d =  delaunay2d_from(b,pocet_pointu_v_souboru);
     t =  tri_delaunay2d_from(d);
+
+
+
     ///posun a offset v ose z
     for(i=0; i<pocet_pointu_v_souboru; i++)
     {
@@ -58,17 +60,18 @@ int main()
         b[i].z = b[i].z + offset;
     }
     /// hlavicka
-    // fp2 = fopen ("C:/NMS/macros/triangle_from_delaunay.txt", "w");
-    fp2 = fopen ("triangle_from_delaunay.txt", "w");
-    fprintf(log,"Pocet trianglu: %d\n",t->num_triangles);
-    fprintf(fp2,"%d\n",t->num_triangles);
+
+    // f_vystup = fopen ("C:/NMS/macros/triangle_from_delaunay.txt", "w");
+    f_vystup = fopen ("triangle_from_delaunay.txt", "w");
+
+    fprintf(f_log,"Pocet trianglu: %d\n",t->num_triangles);
+    fprintf(f_vystup,"%d\n",t->num_triangles);
 
     j = 0;
 
     /// ulozeni dat do souboru
     for(i = 0; i < t->num_triangles ; i++)
     {
-
         double b0x = b[t->tris[j+0]].x;
         double b0y = b[t->tris[j+0]].y;
         double b0z = b[t->tris[j+0]].z;
@@ -80,7 +83,7 @@ int main()
         double b2z = b[t->tris[j+2]].z;
 
         /// trojuhelnik body
-        fprintf(fp2," %.3f %.3f %.3f %.3f %.3f %.3f %.3f %.3f %.3f",\
+        fprintf(f_vystup," %.3f %.3f %.3f %.3f %.3f %.3f %.3f %.3f %.3f",\
                 b0x, b0y, b0z, b1x, b1y, b1z, b2x, b2y, b2z );
         /// trojuhelnik delky stran nedulezite, pokus o zobrazeni kvality
         ///rezervovano/////////////////////////////////////////////////////////////
@@ -89,18 +92,15 @@ int main()
         double b, b_z;
         double c, c_z, h_z;
 
-
-
-
+        ///              delky stran idela
         a = sqrt((b0x - b1x)*(b0x - b1x) + (b0y - b1y)*(b0y - b1y) + (b0z - b1z)*(b0z - b1z));
         b = sqrt((b2x - b1x)*(b2x - b1x) + (b2y - b1y)*(b2y - b1y) + (b2z - b1z)*(b2z - b1z));
         c = sqrt((b2x - b0x)*(b2x - b0x) + (b2y - b0y)*(b2y - b0y) + (b2z - b0z)*(b2z - b0z));
 
+        ///              delky stran zpohledu
         a_z = sqrt((b0x - b1x)*(b0x - b1x) + (b0y - b1y)*(b0y - b1y) );
         b_z = sqrt((b2x - b1x)*(b2x - b1x) + (b2y - b1y)*(b2y - b1y) );
         c_z = sqrt((b2x - b0x)*(b2x - b0x) + (b2y - b0y)*(b2y - b0y) );
-
-
 
         ///obsah z idealni pohled
         h = (a+b+c)/2;
@@ -120,15 +120,14 @@ int main()
         h_ideal = (a+a+a)/2;
         h_ideal = sqrt(h_ideal*(h_ideal-a)*(h_ideal-a)*(h_ideal-a));
 
-
-
-        fprintf (fp2," %.2f %.2f -1: -1\n", h_ideal/h, h/h_z);
+        fprintf (f_vystup," %.2f %.2f -1: -1\n", h_ideal/h, h/h_z);
         ////////////////////////////////////////////////////////////////////////////////////
         j = j + 3;
     }
-    fclose(fp2);
-    fprintf(log,"Cas programu : %.4f msec\n",(clock() - start));
-    fclose(log);
+
+    fclose(f_vystup);
+    fprintf(f_log,"Cas programu : %.4f msec\n",(float)(clock() - start));
+    fclose(f_log);
 
     return 0;
 }
