@@ -6,7 +6,7 @@
 
 void swapp (double *px, double *py)
 {
-    double *tmp;
+    double *tmp = 0;
     *tmp = *px;
     *px = *py;
     *py = *tmp;
@@ -27,7 +27,7 @@ int main()
     int pocet_pointu_v_souboru;
     char buf [50];
 
-    delaunay2d_t* d;       /// z delaunay.h
+    delaunay2d_t* d;       /// struct z delaunay.h
     tri_delaunay2d_t* t;   /// z delaunay.h
 
     del_point2d_t b[1000];
@@ -47,11 +47,8 @@ int main()
     }
     fclose(f_vstup);
 
-
-    d =  delaunay2d_from(b,pocet_pointu_v_souboru);
-    t =  tri_delaunay2d_from(d);
-
-
+    d =  delaunay2d_from(b,pocet_pointu_v_souboru); /// zavedeni bodu do delaunay
+    t =  tri_delaunay2d_from(d);                    /// propocet v delaunay
 
     ///posun a offset v ose z
     for(i=0; i<pocet_pointu_v_souboru; i++)
