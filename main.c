@@ -79,7 +79,7 @@ int main()
         double b2y = b[t->tris[j+2]].y;
         double b2z = b[t->tris[j+2]].z;
 
-        /// trojuhelnik body
+        ///                      trojuhelnik body
         fprintf(f_vystup," %.3f %.3f %.3f %.3f %.3f %.3f %.3f %.3f %.3f",\
                 b0x, b0y, b0z, b1x, b1y, b1z, b2x, b2y, b2z );
         /// trojuhelnik delky stran nedulezite, pokus o zobrazeni kvality
@@ -89,12 +89,12 @@ int main()
         double b, b_z;
         double c, c_z, h_z;
 
-        ///              delky stran idela
+        ///                           delky stran idela
         a = sqrt((b0x - b1x)*(b0x - b1x) + (b0y - b1y)*(b0y - b1y) + (b0z - b1z)*(b0z - b1z));
         b = sqrt((b2x - b1x)*(b2x - b1x) + (b2y - b1y)*(b2y - b1y) + (b2z - b1z)*(b2z - b1z));
         c = sqrt((b2x - b0x)*(b2x - b0x) + (b2y - b0y)*(b2y - b0y) + (b2z - b0z)*(b2z - b0z));
 
-        ///              delky stran zpohledu
+        ///                 delky stran zpohledu
         a_z = sqrt((b0x - b1x)*(b0x - b1x) + (b0y - b1y)*(b0y - b1y) );
         b_z = sqrt((b2x - b1x)*(b2x - b1x) + (b2y - b1y)*(b2y - b1y) );
         c_z = sqrt((b2x - b0x)*(b2x - b0x) + (b2y - b0y)*(b2y - b0y) );
